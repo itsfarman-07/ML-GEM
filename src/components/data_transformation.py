@@ -27,6 +27,7 @@ class DataTransformation:
         This function is responsible for data transformation
         '''
         try:
+            
             # Define which columns should be ordinal-encoded and which should be scaled
             categorical_cols = ['cut', 'color','clarity']
             numerical_cols = ['carat', 'depth','table', 'x', 'y', 'z']

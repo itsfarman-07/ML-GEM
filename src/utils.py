@@ -47,7 +47,6 @@ def evaluate_models(xtrain,ytrain,xtest,ytest,models):
         logging.info('Exception occured during model training')
         raise CustomException(e,sys)
     
-
 def model_metrics(true, predicted):
     try :
         mae = mean_absolute_error(true, predicted)
@@ -93,4 +92,3 @@ def load_object(file_path):
     except Exception as e:
         logging.info('Exception Occured in load_object function utils')
         raise CustomException(e,sys)
-    

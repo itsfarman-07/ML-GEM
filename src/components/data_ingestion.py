@@ -4,13 +4,11 @@ import sys
 from src.exception import CustomException
 from src.logger import logging
 import pandas as pd
-from src.components.data_transformation import DataTransformation, DataTransformationConfig
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
 from src.components.data_transformation import DataTransformation, DataTransformationConfig
 from src.components.model_trainer import ModelTrainer, ModelTrainerConfig
-
 
 # Initialize Data Ingestion Configuration
 @dataclass
@@ -19,6 +17,7 @@ class DataIngestionConfig:
     test_data_path: str = os.path.join('artifacts','test.csv')
     raw_data_path: str = os.path.join('artifacts','data.csv')
 
+# Create a class for Data Ingestion
 class DataIngestion:
     def __init__(self):
         self.ingestion_config = DataIngestionConfig()
@@ -49,7 +48,7 @@ class DataIngestion:
         except Exception as e:
             logging.info('Exception occured at Data Ingestion stage')
             raise CustomException(e, sys)
-        
+    
 # Run Data ingestion
 if __name__ == '__main__':
     obj = DataIngestion()
@@ -59,4 +58,4 @@ if __name__ == '__main__':
     train_arr, test_arr, _ = data_transformation.initate_data_transformation(train_data,test_data)
 
     modeltrainer = ModelTrainer()
-    modeltrainer.initate_model_training(train_arr, test_arr)
+    print(modeltrainer.initate_model_training(train_arr, test_arr))

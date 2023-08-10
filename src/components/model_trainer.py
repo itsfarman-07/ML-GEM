@@ -21,7 +21,6 @@ from src.utils import evaluate_models
 from src.utils import print_evaluated_results
 from src.utils import model_metrics
 
-
 from dataclasses import dataclass
 import sys
 import os
@@ -56,7 +55,6 @@ class ModelTrainer:
                 "GradientBoosting Regressor":GradientBoostingRegressor(),
                 "AdaBoost Regressor": AdaBoostRegressor()
             }
-
 
             model_report:dict = evaluate_models(xtrain,ytrain,xtest,ytest,models)
 
