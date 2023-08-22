@@ -70,7 +70,7 @@ body {
   }
   
   input[type="submit"]:hover {
-    background-color: #f00b0b;
+    background-color: #008bcc;
   }
   
   .form-group {
